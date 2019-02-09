@@ -329,6 +329,8 @@ It also can add a delay to wait for spindle to run on full speed.
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
 
+
+
 #define X_MAX_LENGTH 100
 #define Y_MAX_LENGTH 100
 #define Z_MAX_LENGTH 100
