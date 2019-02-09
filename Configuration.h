@@ -63,9 +63,11 @@
 #define MIXING_EXTRUDER 0
 
 #define DRIVE_SYSTEM 0
+
 #define XAXIS_STEPS_PER_MM 80
 #define YAXIS_STEPS_PER_MM 80
-#define ZAXIS_STEPS_PER_MM 1600
+#define ZAXIS_STEPS_PER_MM 400  // changed from 1600
+
 #define EXTRUDER_FAN_COOL_TEMP 50
 #define PDM_FOR_EXTRUDER 0
 #define PDM_FOR_COOLER 0
@@ -75,6 +77,7 @@
 #define RETRACT_ON_PAUSE 2
 #define PAUSE_START_COMMANDS ""
 #define PAUSE_END_COMMANDS ""
+
 #define EXT0_X_OFFSET 0
 #define EXT0_Y_OFFSET 0
 #define EXT0_Z_OFFSET 0
@@ -84,7 +87,9 @@
 #define EXT0_HEATER_PIN HEATER_0_PIN
 #define EXT0_STEP_PIN ORIG_E0_STEP_PIN
 #define EXT0_DIR_PIN ORIG_E0_DIR_PIN
-#define EXT0_INVERSE 0
+
+#define EXT0_INVERSE 1 // modified
+
 #define EXT0_ENABLE_PIN ORIG_E0_ENABLE_PIN
 #define EXT0_ENABLE_ON 0
 #define EXT0_MAX_FEEDRATE 50
@@ -110,6 +115,7 @@
 #define EXT0_DECOUPLE_TEST_PERIOD 12000
 #define EXT0_JAM_PIN -1
 #define EXT0_JAM_PULLUP 0
+
 #define EXT1_X_OFFSET 1440
 #define EXT1_Y_OFFSET 0
 #define EXT1_Z_OFFSET 0
@@ -148,6 +154,7 @@
 
 #define FEATURE_RETRACTION 1
 #define AUTORETRACT_ENABLED 0
+
 #define RETRACTION_LENGTH 3
 #define RETRACTION_LONG_LENGTH 13
 #define RETRACTION_SPEED 40
@@ -155,12 +162,14 @@
 #define RETRACTION_UNDO_EXTRA_LENGTH 0
 #define RETRACTION_UNDO_EXTRA_LONG_LENGTH 0
 #define RETRACTION_UNDO_SPEED 20
+
 #define FILAMENTCHANGE_X_POS 0
 #define FILAMENTCHANGE_Y_POS 0
 #define FILAMENTCHANGE_Z_ADD  2
 #define FILAMENTCHANGE_REHOME 1
 #define FILAMENTCHANGE_SHORTRETRACT 5
 #define FILAMENTCHANGE_LONGRETRACT 50
+
 #define JAM_STEPS 220
 #define JAM_SLOWDOWN_STEPS 320
 #define JAM_SLOWDOWN_TO 70
@@ -316,20 +325,20 @@ It also can add a delay to wait for spindle to run on full speed.
 #define DISABLE_Z 0
 #define DISABLE_E 0
 
-#define INVERT_X_DIR 0
+#define INVERT_X_DIR 1   // changed from 0
 #define INVERT_Y_DIR 1
 #define INVERT_Z_DIR 0
 
-#define X_HOME_DIR -1
+#define X_HOME_DIR -1 // changed from -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR 0
 
-
-
+//TODO - review MAX_LENGTH values
 #define X_MAX_LENGTH 200
 #define Y_MAX_LENGTH 200
 #define Z_MAX_LENGTH 200
 
+//TODO - review MIN_POS values
 #define X_MIN_POS 0
 #define Y_MIN_POS -200
 #define Z_MIN_POS 0
@@ -364,28 +373,35 @@ It also can add a delay to wait for spindle to run on full speed.
 #define DELTASEGMENTS_PER_PRINTLINE 24
 #define STEPPER_INACTIVE_TIME 360L
 #define MAX_INACTIVE_TIME 0L
+
 #define MAX_FEEDRATE_X 250
 #define MAX_FEEDRATE_Y 300
-#define MAX_FEEDRATE_Z 2
+#define MAX_FEEDRATE_Z 10
+
 #define HOMING_FEEDRATE_X 40
 #define HOMING_FEEDRATE_Y 40
-#define HOMING_FEEDRATE_Z 2
+#define HOMING_FEEDRATE_Z 5
+
 #define HOMING_ORDER HOME_ORDER_XYZ
+
 #define ZHOME_MIN_TEMPERATURE 0
 #define ZHOME_HEAT_ALL 1
 #define ZHOME_HEAT_HEIGHT 20
 #define ZHOME_X_POS 999999
 #define ZHOME_Y_POS 999999
+
 #define ENABLE_BACKLASH_COMPENSATION 1
 #define X_BACKLASH 0
 #define Y_BACKLASH 0
 #define Z_BACKLASH 0
+
 #define RAMP_ACCELERATION 1
 #define STEPPER_HIGH_DELAY 0
 #define DIRECTION_DELAY 0
 #define STEP_DOUBLER_FREQUENCY 12000
 #define ALLOW_QUADSTEPPING 1
 #define DOUBLE_STEP_DELAY 0 // time in microseconds
+
 #define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_X 1000
 #define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Y 1000
 #define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Z 100
@@ -399,6 +415,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define PRINTLINE_CACHE_SIZE 16
 #define MOVE_CACHE_LOW 10
 #define LOW_TICKS_PER_MOVE 250000
+
 #define FEATURE_TWO_XSTEPPER 0
 #define X2_STEP_PIN   ORIG_E1_STEP_PIN
 #define X2_DIR_PIN    ORIG_E1_DIR_PIN
@@ -415,14 +432,15 @@ It also can add a delay to wait for spindle to run on full speed.
 #define Z3_STEP_PIN   ORIG_E2_STEP_PIN
 #define Z3_DIR_PIN    ORIG_E2_DIR_PIN
 #define Z3_ENABLE_PIN ORIG_E2_ENABLE_PIN
+
 #define FEATURE_DITTO_PRINTING 0
 #define USE_ADVANCE 0
 #define ENABLE_QUADRATIC_ADVANCE 0
 
-
 // ################# Misc. settings ##################
 
 #define BAUDRATE 250000
+
 #define ENABLE_POWER_ON_STARTUP 0
 #define POWER_INVERTING 0
 #define KILL_METHOD 1
@@ -452,7 +470,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define UI_SERVO_CONTROL 0
 #define FAN_KICKSTART_TIME  200
 
-        #define FEATURE_WATCHDOG 1
+#define FEATURE_WATCHDOG 1
 
 // #################### Z-Probing #####################
 
@@ -555,6 +573,7 @@ Values must be in range 1..255
 */
 #define BEEPER_SHORT_SEQUENCE 2,2
 #define BEEPER_LONG_SEQUENCE 8,8
+
 #define UI_SET_PRESET_HEATED_BED_TEMP_PLA 50
 #define UI_SET_PRESET_EXTRUDER_TEMP_PLA   210
 #define UI_SET_PRESET_HEATED_BED_TEMP_ABS 90
