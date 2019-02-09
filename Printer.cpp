@@ -2418,4 +2418,3 @@ void Printer::showJSONStatus(int type) {
 #if defined(CUSTOM_EVENTS)
 #include "CustomEventsImpl.h"
 #endif
-
