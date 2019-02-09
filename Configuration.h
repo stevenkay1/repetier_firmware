@@ -52,12 +52,7 @@
 #define FAN_THERMO_MAX_TEMP 60
 #define FAN_THERMO_THERMISTOR_PIN -1
 #define FAN_THERMO_THERMISTOR_TYPE 1
-#undef X_MAX_PIN
-#define X_MAX_PIN -1
-#undef Y_MAX_PIN
-#define Y_MAX_PIN -1
-#undef Z_MAX_PIN
-#define Z_MAX_PIN -1
+
 
 //#define EXTERNALSERIAL  use Arduino serial library instead of build in. Requires more ram, has only 63 byte input buffer.
 // Uncomment the following line if you are using arduino compatible firmware made for Arduino version earlier then 1.0
@@ -271,29 +266,29 @@ It also can add a delay to wait for spindle to run on full speed.
 #define MIN_HARDWARE_ENDSTOP_Y true
 
 #define ENDSTOP_PULLUP_Z_MIN true
-#define ENDSTOP_Z_MIN_INVERTING true
-#define MIN_HARDWARE_ENDSTOP_Z true
+#define ENDSTOP_Z_MIN_INVERTING false
+#define MIN_HARDWARE_ENDSTOP_Z false
 
 #define ENDSTOP_PULLUP_X_MAX true
 #define ENDSTOP_X_MAX_INVERTING false
 #define MAX_HARDWARE_ENDSTOP_X false
 
 #define ENDSTOP_PULLUP_Y_MAX true
-#define ENDSTOP_Y_MAX_INVERTING false
+#define ENDSTOP_Y_MAX_INVERTING true
 #define MAX_HARDWARE_ENDSTOP_Y false
 
 #define ENDSTOP_PULLUP_Z_MAX true
-#define ENDSTOP_Z_MAX_INVERTING false
-#define MAX_HARDWARE_ENDSTOP_Z false
+#define ENDSTOP_Z_MAX_INVERTING true
+#define MAX_HARDWARE_ENDSTOP_Z true
 
 #define max_software_endstop_r true
 
 #define min_software_endstop_x false
-#define min_software_endstop_y true
+#define min_software_endstop_y false
 #define min_software_endstop_z true
 
 #define max_software_endstop_x true
-#define max_software_endstop_y false
+#define max_software_endstop_y true
 #define max_software_endstop_z false
 
 #define ENDSTOP_X_BACK_MOVE 5
@@ -306,7 +301,7 @@ It also can add a delay to wait for spindle to run on full speed.
 
 #define ENDSTOP_X_BACK_ON_HOME 1
 #define ENDSTOP_Y_BACK_ON_HOME 1
-#define ENDSTOP_Z_BACK_ON_HOME 0
+#define ENDSTOP_Z_BACK_ON_HOME 1
 
 #define ALWAYS_CHECK_ENDSTOPS 1
 
@@ -322,21 +317,21 @@ It also can add a delay to wait for spindle to run on full speed.
 #define DISABLE_E 0
 
 #define INVERT_X_DIR 0
-#define INVERT_Y_DIR 0
+#define INVERT_Y_DIR 1
 #define INVERT_Z_DIR 0
 
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
-#define Z_HOME_DIR -1
+#define Z_HOME_DIR 0
 
 
 
-#define X_MAX_LENGTH 100
-#define Y_MAX_LENGTH 100
-#define Z_MAX_LENGTH 100
+#define X_MAX_LENGTH 200
+#define Y_MAX_LENGTH 200
+#define Z_MAX_LENGTH 200
 
 #define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define Y_MIN_POS -200
 #define Z_MIN_POS 0
 
 #define DISTORTION_CORRECTION 0
