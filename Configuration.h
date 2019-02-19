@@ -382,7 +382,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define HOMING_FEEDRATE_Y 40
 #define HOMING_FEEDRATE_Z 5
 
-#define HOMING_ORDER HOME_ORDER_XYZ
+#define HOMING_ORDER HOME_ORDER_ZXY // SK modified
 
 #define ZHOME_MIN_TEMPERATURE 0
 #define ZHOME_HEAT_ALL 1
