@@ -272,7 +272,7 @@ It also can add a delay to wait for spindle to run on full speed.
 
 #define ENDSTOP_PULLUP_Y_MIN true
 #define ENDSTOP_Y_MIN_INVERTING true
-#define MIN_HARDWARE_ENDSTOP_Y true
+#define MIN_HARDWARE_ENDSTOP_Y false  // updated from true 13/08/2019
 
 #define ENDSTOP_PULLUP_Z_MIN true
 #define ENDSTOP_Z_MIN_INVERTING false
@@ -283,8 +283,8 @@ It also can add a delay to wait for spindle to run on full speed.
 #define MAX_HARDWARE_ENDSTOP_X false
 
 #define ENDSTOP_PULLUP_Y_MAX true
-#define ENDSTOP_Y_MAX_INVERTING true
-#define MAX_HARDWARE_ENDSTOP_Y false
+#define ENDSTOP_Y_MAX_INVERTING false  // updated from true 13/08/2019
+#define MAX_HARDWARE_ENDSTOP_Y true // updated from false 13/08/2019
 
 #define ENDSTOP_PULLUP_Z_MAX true
 #define ENDSTOP_Z_MAX_INVERTING true
@@ -293,11 +293,11 @@ It also can add a delay to wait for spindle to run on full speed.
 #define max_software_endstop_r true
 
 #define min_software_endstop_x false
-#define min_software_endstop_y false
+#define min_software_endstop_y true // updated from false 13/08/2019
 #define min_software_endstop_z true
 
 #define max_software_endstop_x true
-#define max_software_endstop_y true
+#define max_software_endstop_y false // updated from true 13/08/2019
 #define max_software_endstop_z false
 
 #define ENDSTOP_X_BACK_MOVE 5
@@ -326,11 +326,11 @@ It also can add a delay to wait for spindle to run on full speed.
 #define DISABLE_E 0
 
 #define INVERT_X_DIR 1   // changed from 0
-#define INVERT_Y_DIR 1
+#define INVERT_Y_DIR 0 // updated from 1 13/08/2019
 #define INVERT_Z_DIR 0
 
-#define X_HOME_DIR -1 // changed from -1
-#define Y_HOME_DIR -1
+#define X_HOME_DIR -1
+#define Y_HOME_DIR 1 // updated from -1 13/08/2019
 #define Z_HOME_DIR 0
 
 //TODO - review MAX_LENGTH values
